@@ -5,7 +5,7 @@ import HomeStart from "./components/HomeStart";
 import React from "react";
 import { useState } from "react";
 import TimeOfGameForm from "./components/TimeOfGameForm";
-
+import "./styling/kalamburyMC.css";
 const App = () => {
   const navigate = useNavigate();
 
@@ -21,8 +21,11 @@ const App = () => {
 
   return (
     <div>
-      <header>KALAMBURY</header>
-      <div>
+      <div className={"title"}>
+        <header className={"neonText"}>KALAMBURY</header>
+        <p className={"rotateGAME"}>GAME</p>
+      </div>
+      <div className={"gameContainer"}>
         <Routes>
           <Route path="/" element={<HomeStart />} />
           <Route
@@ -59,8 +62,10 @@ const App = () => {
             }
           />
         </Routes>
-        <div style={{ textAlign: "center" }}>
-          <button onClick={() => navigate("/")}>back to home</button>
+        <div className={"home-button-cnt"}>
+          <button className={"backhome-button"} onClick={() => navigate("/")}>
+            back to home {/*TODO remove home button from home cmpnt*/}
+          </button>
         </div>
       </div>
     </div>
