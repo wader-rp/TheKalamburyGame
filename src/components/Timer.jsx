@@ -6,10 +6,12 @@ const Timer = ({
   setTime,
   setIsTimeVisible,
   prevTime,
+  addPoint,
 }) => {
   const handleTimerStop = () => {
     setIsTimeVisible(false);
     setTime(prevTime);
+    addPoint()
   };
 
   return (

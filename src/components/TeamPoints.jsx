@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 
-const TeamPoints = ({ teamA, teamB }) => {
-  const [teamAPoints, setTeamAPoints] = useState(0);
-  const [teamBPoints, setTeamBPoints] = useState(0);
-
-  const handlePointsCount = () => {};
+const TeamPoints = ({ teamsData }) => {
   return (
     <div>
-      <div>
-        <div>{`Drużyna ${teamA}`}</div>
-        <div>{`Drużyna ${teamB}`}</div>
-      </div>
+      {teamsData.map(({ name, score }, index) => (
+        <div key={index}>
+          Drużyna {name} : {score}
+        </div>
+      ))}
     </div>
   );
 };

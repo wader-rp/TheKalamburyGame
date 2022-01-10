@@ -1,10 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useState } from "react";
 import TeamPoints from "./TeamPoints";
 import PasswordDisplay from "./PasswordDisplay";
 import Timer from "./Timer";
+import ActiveTeamDisplay from "./ActiveTeamDisplay";
+import { moveToNextTeam } from "./helpers/moveToNextTeam";
 
-const GameContainer = ({ time, setTime, teamB, teamA, prevTime }) => {
+const GameContainer = ({
+  time,
+  setTime,
+  prevTime,
+  setPrevTime,
+  activeTeam,
+  setActiveTeam,
+  setTeamsData,
+  teamsData,
+}) => {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -16,14 +27,23 @@ const GameContainer = ({ time, setTime, teamB, teamA, prevTime }) => {
       if (time === 0) {
         setIsTimeVisible(false);
         setTime(prevTime);
+        moveToNextTeam(teamsData, activeTeam, setActiveTeam);
       }
       return () => clearInterval(timerInterval);
     }
   }, [time, isTimeVisible]);
   console.log(time);
 
+  const addPoint = () => {
+    const newTeamsData = [...teamsData];
+    newTeamsData[activeTeam].score = newTeamsData[activeTeam].score + 1;
+    setTeamsData(newTeamsData);
+    moveToNextTeam(teamsData, activeTeam, setActiveTeam);
+  };
+
   return (
     <div>
+      <h1>Gra drużyna {teamsData[activeTeam].name}</h1>
       <PasswordDisplay
         isPasswordVisible={isPasswordVisible}
         setIsPasswordVisible={setIsPasswordVisible}
@@ -37,8 +57,9 @@ const GameContainer = ({ time, setTime, teamB, teamA, prevTime }) => {
         setTime={setTime}
         time={time}
         prevTime={prevTime}
+        addPoint={addPoint}
       />
-      <TeamPoints teamA={teamA} teamB={teamB} />
+      <TeamPoints teamsData={teamsData} />
     </div>
   );
 };
