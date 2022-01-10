@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const HomeStart = () => {
   return (
-    <div>
+    <div className="start-button-cnt">
       <Link to={"teamnamesform"}>
-        <button>START!</button>
+        <button className={"start-button"}>START!</button>
       </Link>
     </div>
   );
