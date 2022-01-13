@@ -3,8 +3,9 @@ import { useState } from "react";
 import TeamPoints from "./TeamPoints";
 import PasswordDisplay from "./PasswordDisplay";
 import Timer from "./Timer";
-import ActiveTeamDisplay from "./ActiveTeamDisplay";
+
 import { moveToNextTeam } from "./helpers/moveToNextTeam";
+import HomeButton from "./HomeButton";
 
 const GameContainer = ({
   time,
@@ -15,6 +16,7 @@ const GameContainer = ({
   setActiveTeam,
   setTeamsData,
   teamsData,
+  home,
 }) => {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);

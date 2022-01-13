@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import HomeButton from "./HomeButton";
 
-const TimeOfGameForm = ({ setTime, setPrevTime }, event) => {
+const TimeOfGameForm = ({ setTime, setPrevTime, home }, event) => {
   const handleValueChange = (event) => {
     setTime(event.target.value);
     setPrevTime(event.target.value);

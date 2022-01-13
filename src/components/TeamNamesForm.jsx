@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
+import HomeButton from "./HomeButton";
 
-const TeamNamesForm = ({ teamsData, setTeamsData }) => {
+const TeamNamesForm = ({ teamsData, setTeamsData, home }) => {
   const handleAddTeam = () => {
     setTeamsData([...teamsData, { name: "", score: 0 }]);
   };
