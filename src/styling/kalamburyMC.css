@@ -5,33 +5,93 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 body {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 0.3rem;
     background: var(--clr-bg);
     font-family: 'Bungee-inline', cursive;
     color: var(--clr-neon);
 
-}
-
-.gameContainer {
-
 
 }
 
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-left: 0.7rem;
+
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.input {
+
+    color: var(--clr-neon);
+    border: CurrentColor 0.15em solid;
+    border-radius: 0.25em;
+    background: var(--clr-bg);
+    box-shadow: inset 0 0 0.25em 0 var(--clr-neon),
+    0 0 0.25em 0 var(--clr-neon);
+
+}
+.del-btn {
+    width: 10%;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--clr-neon);
+    border: CurrentColor 0.15em solid;
+    border-radius: 0.25em;
+    background: var(--clr-bg);
+    box-shadow: inset 0 0 0.25em 0 var(--clr-neon),
+    0 0 0.25em 0 var(--clr-neon);
+    text-shadow:
+            0 0 0.125em hsl(0 0% 70% / 0.1),
+            0 0 0.15em currentColor;
+}
+.cnt-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
 .neonText {
     font-size: 2rem;
 }
-.start-button-cnt {
-    display: flex;
+
+.add-team-btn {
     justify-content: center;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: CurrentColor 0.15em solid;
+    padding: 0.35em 1em;
+    border-radius: 0.25em;
+    background: var(--clr-bg);
+
+    text-shadow:
+            0 0 0.125em hsl(0 0% 70% / 0.1),
+            0 0 0.25em currentColor;
+    box-shadow: inset 0 0 0.3em 0 var(--clr-neon),
+    0 0 0.3em 0 var(--clr-neon);
 }
 .start-button {
-
     justify-content: center;
     cursor: pointer;
     font-size: 1.2rem;
@@ -49,36 +109,24 @@ body {
     box-shadow: inset 0 0 0.3em 0 var(--clr-neon),
             0 0 0.3em 0 var(--clr-neon);
 }
-
 .rotateGAME {
     margin: 0 0 0 0;
     height: min-content;
     position: relative;
     right: 0.7rem;
-    top: 1.1rem;
-    width:max-content;
+    top: 1.15rem;
     font-size: 0.55rem;
     color: var(--clr-neon);
-    -webkit-transform: rotate(295deg);
-    -moz-transform: rotate(295deg);
-    -ms-transform: rotate(295deg);
-    -o-transform: rotate(295deg);
     transform: rotate(295deg);
     text-shadow:
             0 0 0.125em hsl(0 0% 70% / 0.1),
             0 0 0.25em currentColor;
 }
-.title {
-    display: inline-flex;
-    margin-top: 1rem;
 
-}
 
 .backhome-button {
-    display: flex;
-    justify-content: center;
     cursor: pointer;
-    font-size: 0.4rem;
+    font-size: 0.3rem;
     margin-top: 2rem;
     text-decoration: none;
     color: var(--clr-neon);
@@ -86,15 +134,87 @@ body {
     padding: 0.35em 1em;
     border-radius: 0.25em;
     background: var(--clr-bg);
+    text-shadow: 0 0 0.125em hsl(0 0% 70% / 0.1),
+    0 0 0.25em currentColor;
+    box-shadow: inset 0 0 0.3em 0 var(--clr-neon),
+    0 0 0.3em 0 var(--clr-neon);
+}
 
+.go-next-button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font: 0.8rem Arial;
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: CurrentColor 0.15em solid;
+    padding: 0.35em 1em;
+    border-radius: 0.25em;
+    background: var(--clr-bg);
+    outline: none;
     text-shadow:
             0 0 0.125em hsl(0 0% 70% / 0.1),
             0 0 0.25em currentColor;
     box-shadow: inset 0 0 0.3em 0 var(--clr-neon),
     0 0 0.3em 0 var(--clr-neon);
+
 }
 
-.home-button-cnt {
+.btn-cnt {
     display: flex;
     justify-content: center;
+}
+
+.time-sel-cnt {
+    margin-top: 1.5rem;
+
+
+}
+.time-form {
+    display: flex;
+    justify-content: space-between;
+}
+.time-form input {
+    margin: auto;
+    cursor: pointer;
+
+    width: 1rem;
+    height: 1rem;
+
+    color: var(--clr-bg);
+    text-shadow:inset 0 0 0.3em 0 var(--clr-neon),
+    0 0 0.3em 0 var(--clr-neon);;
+
+
+}
+.stop-btn {
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    color: darkred;
+    border: CurrentColor 0.3em solid;
+    padding: 0.35em 1em;
+    border-radius: 0.25em;
+    background: var(--clr-bg);
+
+    box-shadow: inset 0 0 0.3em 0 darkred,
+    0 0 0.3em 0 darkred;
+}
+
+.game-live-cnt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.timer-cnt {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
 }

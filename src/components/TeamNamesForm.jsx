@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-
+import { IconX } from "@tabler/icons";
 import { Link } from "react-router-dom";
-import HomeButton from "./HomeButton";
 
-const TeamNamesForm = ({ teamsData, setTeamsData, home }) => {
+const TeamNamesForm = ({ teamsData, setTeamsData }) => {
   const handleAddTeam = () => {
     setTeamsData([...teamsData, { name: "", score: 0 }]);
   };
@@ -23,23 +22,28 @@ const TeamNamesForm = ({ teamsData, setTeamsData, home }) => {
   return (
     <div>
       {teamsData.map((element, index) => (
-        <div key={index}>
+        <div key={index} className={"cnt-container"}>
           <input
             value={element.name}
             name={"name"}
             onChange={(event) => handleChange(index, event)}
+            className={"input"}
           />
-          {index > 0 ? (
-            <button onClick={() => handleDelete(index)}>Usuń</button>
+          {index > 1 ? (
+            <button onClick={() => handleDelete(index)} className={"del-btn"}>
+              x
+            </button>
           ) : null}
         </div>
       ))}
-      <div>
-        <button onClick={handleAddTeam}>DODAJ DRUŻYNĘ</button>
+      <div className={"btn-cnt"}>
+        <button onClick={handleAddTeam} className={"add-team-btn"}>
+          DODAJ DRUŻYNĘ
+        </button>
       </div>
-      <div>
-        <Link to={"/durationselect"}>
-          <button>DALEJ</button>
+      <div className={"btn-cnt"}>
+        <Link to={"/durationselect"} className={"go-next-button"}>
+          DALEJ
         </Link>
       </div>
     </div>

@@ -21,7 +21,9 @@ const PasswordDisplay = (props) => {
       </div>
       <div>
         {props.isTimeVisible ? null : (
-          <button onClick={handleDrawButtonClick}>WYLOSUJ HASŁO</button>
+          <button onClick={handleDrawButtonClick} className={"add-team-btn"}>
+            WYLOSUJ HASŁO
+          </button>
         )}
       </div>
     </div>

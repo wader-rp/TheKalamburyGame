@@ -5,7 +5,6 @@ import PasswordDisplay from "./PasswordDisplay";
 import Timer from "./Timer";
 
 import { moveToNextTeam } from "./helpers/moveToNextTeam";
-import HomeButton from "./HomeButton";
 
 const GameContainer = ({
   time,
@@ -44,8 +43,8 @@ const GameContainer = ({
   };
 
   return (
-    <div>
-      <h1>Gra drużyna {teamsData[activeTeam].name}</h1>
+    <div className={"game-live-cnt"}>
+      <h3>Gra drużyna {teamsData[activeTeam].name}</h3>
       <PasswordDisplay
         isPasswordVisible={isPasswordVisible}
         setIsPasswordVisible={setIsPasswordVisible}
