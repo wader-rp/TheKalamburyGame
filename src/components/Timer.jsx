@@ -15,11 +15,11 @@ const Timer = ({
   };
 
   return (
-    <div className={"game-live-cnt"}>
+    <div>
       <div className={"cnt-container"}>
         <div>
           {isTimeVisible ? (
-            <div>{new Date(time * 1000).toISOString().substr(14, 5)}</div>
+            <div className={"time-dsp"}>{new Date(time * 1000).toISOString().substr(14, 5)}</div>
           ) : (
             false
           )}
@@ -28,7 +28,7 @@ const Timer = ({
       <div className={"btn-cnt"}>
         {isTimeVisible ? (
           <button onClick={handleTimerStop} className={"stop-btn"}>
-            Odgadnięte!
+            STOP
           </button>
         ) : null}
       </div>

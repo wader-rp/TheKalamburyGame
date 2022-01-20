@@ -17,7 +17,7 @@ const PasswordDisplay = (props) => {
   return (
     <div>
       <div>
-        <div>{props.isTimeVisible ? <h1>{randomPassword}</h1> : null}</div>
+        <div>{props.isTimeVisible ? <h1 className={"password"}>{randomPassword}</h1> : null}</div>
       </div>
       <div>
         {props.isTimeVisible ? null : (

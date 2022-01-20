@@ -3,7 +3,7 @@ import HomeButton from "./HomeButton";
 
 const PageWithHomeButton = ({ children }) => {
   return (
-    <div className={"game-container"}>
+    <div>
       {children}
       <HomeButton />
     </div>
