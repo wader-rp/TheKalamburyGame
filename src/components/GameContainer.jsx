@@ -19,7 +19,7 @@ const GameContainer = ({
 }) => {
   const [isTimeVisible, setIsTimeVisible] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
+  console.log(teamsData);
   useEffect(() => {
     if (isTimeVisible) {
       const timerInterval = setInterval(() => {

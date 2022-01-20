@@ -1,6 +1,8 @@
 :root {
     --clr-neon: hsl(176, 97%, 34%);
-    --clr-bg: hsl(176, 39%, 9%);}
+    --clr-bg: hsl(178, 38%, 13%);
+    --clr-gc-bg: hsl(180, 100%, 5%);
+}
 *,
 *::before,
 *::after {
@@ -8,15 +10,20 @@
     margin: 0;
     padding: 0;
 }
-
-body {
-    width: 100%;
-    height: 100%;
+html {
     display: flex;
     justify-content: center;
-    margin-top: 0.3rem;
+    width: 100%;
+}
+body {
+
+    width: min-content;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
     background: var(--clr-bg);
-    font-family: 'Bungee-inline', cursive;
+    font-family: 'Bungee-inline', "Segoe Print", serif;
     color: var(--clr-neon);
 
 
@@ -25,17 +32,24 @@ body {
 .title {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: -0.5rem;
     margin-left: 0.7rem;
 
 }
 
 .game-container {
+    width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    border-radius: 20px;
+    border: #c5ffe7 0.15em solid;
+    padding: 2rem 5rem 5rem 5rem;
+    box-shadow: inset 0 0 0.25em 0 var(--clr-neon),
+    0 0 0.25em 0 var(--clr-neon);
+    background: var(--clr-gc-bg);
+    ;
 
 }
 .input {
@@ -43,26 +57,31 @@ body {
     color: var(--clr-neon);
     border: CurrentColor 0.15em solid;
     border-radius: 0.25em;
-    background: var(--clr-bg);
+    background: var(--clr-gc-bg);
     box-shadow: inset 0 0 0.25em 0 var(--clr-neon),
     0 0 0.25em 0 var(--clr-neon);
+    padding: 0.3rem;
+
 
 }
 .del-btn {
-    width: 10%;
-    margin-left: 1rem;
+
+    position: absolute;
+    margin-left: 0.5rem;
+    font-size: 1.4rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    cursor: pointer;
     color: var(--clr-neon);
-    border: CurrentColor 0.15em solid;
-    border-radius: 0.25em;
-    background: var(--clr-bg);
-    box-shadow: inset 0 0 0.25em 0 var(--clr-neon),
-    0 0 0.25em 0 var(--clr-neon);
-    text-shadow:
-            0 0 0.125em hsl(0 0% 70% / 0.1),
-            0 0 0.15em currentColor;
+    border: CurrentColor 0.1em solid;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    box-shadow: inset 0 0 0.2em 0 var(--clr-neon),
+    0 0 0.2em 0 var(--clr-neon);
+}
+.del-btn-cnt {
+    display: flex;
+    align-items: center;
 }
 .cnt-container {
     display: flex;
@@ -70,24 +89,30 @@ body {
     margin-top: 1.5rem;
 }
 .neonText {
-    font-size: 2rem;
+    font-weight: bolder;
+    font-size: 3rem;
+    text-shadow:
+            0 0 1em hsl(0 0% 70% / 0.1),
+            0 0 0.25em currentColor;
+    text-decoration: aqua;
+
 }
 
 .add-team-btn {
     justify-content: center;
     cursor: pointer;
     font-size: 0.7rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     text-decoration: none;
     color: var(--clr-neon);
     border: CurrentColor 0.15em solid;
     padding: 0.35em 1em;
     border-radius: 0.25em;
-    background: var(--clr-bg);
+    background: var(--clr-gc-bg);
 
-    text-shadow:
+    /*text-shadow:
             0 0 0.125em hsl(0 0% 70% / 0.1),
-            0 0 0.25em currentColor;
+            0 0 0.25em currentColor;*/
     box-shadow: inset 0 0 0.3em 0 var(--clr-neon),
     0 0 0.3em 0 var(--clr-neon);
 }
@@ -95,13 +120,13 @@ body {
     justify-content: center;
     cursor: pointer;
     font-size: 1.2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     text-decoration: none;
     color: var(--clr-neon);
     border: CurrentColor 0.15em solid;
     padding: 0.35em 1em;
     border-radius: 0.25em;
-    background: var(--clr-bg);
+    background: var(--clr-gc-bg);
 
     text-shadow:
             0 0 0.125em hsl(0 0% 70% / 0.1),
@@ -113,9 +138,9 @@ body {
     margin: 0 0 0 0;
     height: min-content;
     position: relative;
-    right: 0.7rem;
-    top: 1.15rem;
-    font-size: 0.55rem;
+    right: 1rem;
+    top: 2.1rem;
+    font-size: 0.75rem;
     color: var(--clr-neon);
     transform: rotate(295deg);
     text-shadow:
@@ -126,18 +151,23 @@ body {
 
 .backhome-button {
     cursor: pointer;
-    font-size: 0.3rem;
-    margin-top: 2rem;
+    font-size: 0.5rem;
+    margin-top: 1.5rem;
     text-decoration: none;
-    color: var(--clr-neon);
+    color: #efefef;
     border: CurrentColor 0.15em solid;
     padding: 0.35em 1em;
     border-radius: 0.25em;
-    background: var(--clr-bg);
+    background: var(--clr-gc-bg);
     text-shadow: 0 0 0.125em hsl(0 0% 70% / 0.1),
     0 0 0.25em currentColor;
     box-shadow: inset 0 0 0.3em 0 var(--clr-neon),
     0 0 0.3em 0 var(--clr-neon);
+}
+.backhome-button-pos {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
 }
 
 .go-next-button {
@@ -152,11 +182,11 @@ body {
     border: CurrentColor 0.15em solid;
     padding: 0.35em 1em;
     border-radius: 0.25em;
-    background: var(--clr-bg);
+    background: var(--clr-gc-bg);
     outline: none;
-    text-shadow:
+   /* text-shadow:
             0 0 0.125em hsl(0 0% 70% / 0.1),
-            0 0 0.25em currentColor;
+            0 0 0.25em currentColor;*/
     box-shadow: inset 0 0 0.3em 0 var(--clr-neon),
     0 0 0.3em 0 var(--clr-neon);
 
@@ -169,37 +199,38 @@ body {
 
 .time-sel-cnt {
     margin-top: 1.5rem;
+    font-family: Arial;
 
 
+}
+h3 {
+    display: flex;
+    justify-content: center;
 }
 .time-form {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .time-form input {
-    margin: auto;
+    margin-right: 0.4rem;
+    margin-left: 0.4rem;
     cursor: pointer;
-
     width: 1rem;
     height: 1rem;
-
-    color: var(--clr-bg);
-    text-shadow:inset 0 0 0.3em 0 var(--clr-neon),
-    0 0 0.3em 0 var(--clr-neon);;
-
-
 }
 .stop-btn {
     justify-content: center;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 2rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     text-decoration: none;
     color: darkred;
     border: CurrentColor 0.3em solid;
     padding: 0.35em 1em;
     border-radius: 0.25em;
-    background: var(--clr-bg);
+    background: var(--clr-gc-bg);
 
     box-shadow: inset 0 0 0.3em 0 darkred,
     0 0 0.3em 0 darkred;
@@ -210,11 +241,49 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    font-family: Arial serif;
 }
 
 .timer-cnt {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
+}
+
+.points-boxes {
+    display: flex;
+    font-family: "Arial Black";
+}
+.points-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid var(--clr-neon);
+    border-radius: 15px;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+}
+.points-score {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+
+}
+.password {
+    font-family: 'Bungee-inline', "Segoe Print", serif;
+    font-size: 3rem;
+    margin-top: 1.5rem;
+    border: 1px solid var(--clr-neon);
+    border-radius: 1rem;
+    box-shadow: inset 0 0 0.3em var(--clr-neon),
+    0 0 0.3em 0 var(--clr-neon);
+    padding: 0.8rem 1rem;
+}
+
+.time-dsp {
+    font-size: 4rem;
 }

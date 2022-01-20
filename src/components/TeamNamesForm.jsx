@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { IconX } from "@tabler/icons";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+
 
 const TeamNamesForm = ({ teamsData, setTeamsData }) => {
   const handleAddTeam = () => {
@@ -30,10 +32,13 @@ const TeamNamesForm = ({ teamsData, setTeamsData }) => {
             className={"input"}
           />
           {index > 1 ? (
-            <button onClick={() => handleDelete(index)} className={"del-btn"}>
-              x
-            </button>
+            <div className={"del-btn-cnt"}>
+
+              <FontAwesomeIcon icon={faTrashAlt} onClick={() => handleDelete(index)} className={"del-btn"} />
+
+            </div>
           ) : null}
+
         </div>
       ))}
       <div className={"btn-cnt"}>
@@ -42,7 +47,7 @@ const TeamNamesForm = ({ teamsData, setTeamsData }) => {
         </button>
       </div>
       <div className={"btn-cnt"}>
-        <Link to={"/durationselect"} className={"go-next-button"}>
+        <Link to={"/durationselect"}  className={"go-next-button"}>
           DALEJ
         </Link>
       </div>
